@@ -1,7 +1,6 @@
 import express from "express"
 import { router } from "./routes"
-// import { Cors } from 'cors'
-const cors = require("cors")
+import cors from 'cors'
 
 const app = express()
 
