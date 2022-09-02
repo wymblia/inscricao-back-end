@@ -3,9 +3,9 @@ CREATE TABLE "user_profile" (
     "user_profile_id" SERIAL NOT NULL,
     "user_id" INTEGER NOT NULL,
     "profile_id" INTEGER NOT NULL,
-    "created_by" TEXT NOT NULL,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "UserProfile_pkey" PRIMARY KEY ("user_profile_id")
+    CONSTRAINT "user_profile_pkey" PRIMARY KEY ("user_profile_id")
 );
 
 -- AddForeignKey
