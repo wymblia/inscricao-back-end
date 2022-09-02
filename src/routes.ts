@@ -3,6 +3,7 @@ import { CreateLeadController } from "./controllers/CreateLeadController"
 import { UserController } from "./controllers/UserController"
 import { ProfileController } from "./controllers/ProfileController"
 import { UserProfileController } from "./controllers/UserProfileController"
+import { PersonController } from "./controllers/PersonController"
 
 const router = Router()
 
@@ -10,12 +11,14 @@ const createLead = new CreateLeadController()
 const user = new UserController()
 const profile = new ProfileController()
 const userProfile = new UserProfileController()
-
+const person = new PersonController()
 
 router.post("/api/leads", createLead.saveLead)
 
 router.post("/api/user", user.saveUser)
-router.get("/api/get-consulters", user.getConsulters)
+
+router.post("/api/person", person.savePerson)
+router.get("/api/person/get-consulters", person.getConsulters)
 
 router.post("/api/profile", profile.saveProfile)
 // router.get("/api/profile", createUser.saveUser)
