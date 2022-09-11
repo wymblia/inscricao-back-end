@@ -4,6 +4,7 @@ import { UserController } from "./controllers/UserController"
 import { ProfileController } from "./controllers/ProfileController"
 import { UserProfileController } from "./controllers/UserProfileController"
 import { PersonController } from "./controllers/PersonController"
+import { ProcessController } from "./controllers/ProcessController"
 
 const router = Router()
 
@@ -12,6 +13,7 @@ const user = new UserController()
 const profile = new ProfileController()
 const userProfile = new UserProfileController()
 const person = new PersonController()
+const process = new ProcessController()
 
 router.post("/api/leads", createLead.saveLead)
 
@@ -25,6 +27,8 @@ router.post("/api/profile", profile.saveProfile)
 
 router.post("/api/:user_id/:profile_id", userProfile.saveUserProfile)
 // router.get("/api/:user_id/:profile", createUser.saveUser)
+
+router.get("/api/process/", process.getProcess)
 
 
 export { router }
